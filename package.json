@@ -1,0 +1,17 @@
+{
+  "name": "webview-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "prettier": "^2.7.1"
+  },
+  "homepage": "https://seonghui.github.io/webview-test/"
+}
