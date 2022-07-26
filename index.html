@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      #example {
+        width: 300px;
+        height: 200px;
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="example">hello world</div>
+    <button id="download-button">다운로드</button>
+    <script>
+      var downloadButton = document.getElementById('download-button');
+      var example = document.getElementById('example');
+
+      downloadButton.addEventListener('click', function () {
+        html2canvas(example).then(function (canvas) {
+          window.location.href = canvas
+            .toDataURL('image/png')
+            .replace('image/png', 'image/octet-stream');
+        });
+      });
+    </script>
+  </body>
+</html>
