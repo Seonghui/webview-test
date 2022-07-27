@@ -435,7 +435,9 @@
 
       convertToImageButton.addEventListener("click", function () {
         html2canvas(imageDownloadExample).then(function (canvas) {
-          imageDownloadResult.appendChild(canvas);
+          var image = canvas.toDataURL("image/png");
+          imageDownloadResult.innerHTML =
+            '<img src="' + image + '"  alt="image"/>';
         });
       });
     </script>
