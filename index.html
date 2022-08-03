@@ -52,6 +52,49 @@
       .clamp-paragraph.only-max-height {
         max-height: calc(2 * 1rem);
       }
+
+      .scroll-shadows {
+        max-height: 200px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+
+        background:
+          /* Shadow Cover TOP */ linear-gradient(
+              white 30%,
+              rgba(255, 255, 255, 0)
+            )
+            center top,
+          /* Shadow Cover BOTTOM */
+            linear-gradient(rgba(255, 255, 255, 0), white 70%) center bottom,
+          /* Shadow TOP */
+            radial-gradient(
+              farthest-side at 50% 0,
+              rgba(0, 0, 0, 0.2),
+              rgba(0, 0, 0, 0)
+            )
+            center top,
+          /* Shadow BOTTOM */
+            radial-gradient(
+              farthest-side at 50% 100%,
+              rgba(0, 0, 0, 0.2),
+              rgba(0, 0, 0, 0)
+            )
+            center bottom;
+
+        background-repeat: no-repeat;
+        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+        background-attachment: local, local, scroll, scroll;
+      }
+
+      /* Not important to the functionality, just for this particular demo */
+      .scroll-shadows {
+        list-style: none;
+        padding-right: 0.5rem;
+      }
+      .scroll-shadows > * {
+        padding: 0.2rem;
+      }
     </style>
   </head>
   <body>
@@ -421,6 +464,31 @@
       publishing software like Aldus PageMaker including versions of Lorem
       Ipsum.
     </p>
+
+    <div>
+      <ul class="scroll-shadows">
+        <li>Lorem, ipsum.</li>
+        <li>Eligendi, repudiandae.</li>
+        <li>Dolor, vel.</li>
+        <li>Obcaecati, praesentium.</li>
+        <li>Impedit, tenetur.</li>
+        <li>Exercitationem, repellat!</li>
+        <li>Aut, asperiores!</li>
+        <li>Dolor, fuga.</li>
+        <li>Ab, aliquid!</li>
+        <li>Adipisci, totam.</li>
+        <li>Error, dicta.</li>
+        <li>Saepe, vero?</li>
+        <li>Eveniet, dolorem!</li>
+        <li>Id, tempora!</li>
+        <li>Voluptate, consectetur?</li>
+        <li>Voluptatibus, omnis.</li>
+        <li>Eius, fugit.</li>
+        <li>Quia, non!</li>
+        <li>At, laudantium?</li>
+        <li>Commodi, maiores!</li>
+      </ul>
+    </div>
 
     <script>
       var convertToImageButton = document.getElementById(
